@@ -9,11 +9,17 @@ import {
   FaWallet,
 } from "react-icons/fa";
 
-const SidebarItem = ({ to, text, icon }) => (
-  <Link to={to} style={{ textDecoration: "none" }}>
+type SidebarItemProps = {
+  to: string;
+  text: string;
+  icon: React.ReactNode;
+};
+
+const SidebarItem = (SidebarItemProps: SidebarItemProps) => (
+  <Link to={SidebarItemProps.to} style={{ textDecoration: "none" }}>
     <ListGroup.Item className="d-flex align-items-center gap-2">
-      {icon}
-      <span>{text}</span>
+      {SidebarItemProps.icon}
+      <span>{SidebarItemProps.text}</span>
     </ListGroup.Item>
   </Link>
 );

@@ -1,19 +1,23 @@
-import React, { Component } from 'react'
-import { FaWrench, FaCogs } from 'react-icons/fa'
+import { Component } from "react";
+import { FaWrench, FaCogs } from "react-icons/fa";
 
-class ErrorBoundary extends Component {
-  constructor(props) {
+type ErrorBoundaryProps = {
+  children: React.ReactNode;
+};
+
+class ErrorBoundary extends Component<ErrorBoundaryProps, { hasError: boolean }> {
+  constructor(props: ErrorBoundaryProps) {
     super(props)
     this.state = { hasError: false }
     this.reloadPage = this.reloadPage.bind(this)
   }
 
-  static getDerivedStateFromError(error) {
-    return { hasError: true }
+  componentDidCatch(error: Error, errorInfo: React.ErrorInfo) {
+    console.log('Error:', error, errorInfo)
   }
 
-  componentDidCatch(error, errorInfo) {
-    console.log('Error:', error, errorInfo)
+  static getDerivedStateFromError(_error: Error) {
+    return { hasError: true }
   }
 
   reloadPage() {

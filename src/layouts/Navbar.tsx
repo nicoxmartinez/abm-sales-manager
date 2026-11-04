@@ -5,7 +5,7 @@ import { FaUserCircle, FaDoorOpen, FaUserAlt } from "react-icons/fa";
 export default function Navbar() {
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-black">
-      <h1 className="navbar-brand" href="#">
+      <h1 className="navbar-brand">
         Sales Manager
       </h1>
       <span className="d-flex ms-auto">

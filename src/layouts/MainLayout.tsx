@@ -1,8 +1,12 @@
 import { Container, Col, Row } from "react-bootstrap";
 import Sidebar from "./Sidebar";
-import Navbar from "./Navbar";
+import Navbar from "./Navbar.tsx";
 
-export default function MainLayout(props) {
+type MainLayoutProps = {
+  children: React.ReactNode;
+};
+
+export default function MainLayout(props: MainLayoutProps) {
   return (
     <>
       <Navbar />

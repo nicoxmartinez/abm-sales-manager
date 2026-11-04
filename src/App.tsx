@@ -1,13 +1,13 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import MainLayout from "./layout/MainLayout";
-import ErrorBoundary from "./components/ErrorBoundary";
-import Home from "./screens/Home";
-import Almacen from "./screens/Almacen";
-import ECommerce from "./screens/ECommerce";
-import Financiacion from "./screens/Financiacion";
-import Local from "./screens/Local";
-import MedioDePago from "./screens/MedioDePago";
-import PuntoDeVenta from "./screens/PuntoDeVenta";
+import ErrorBoundary from "@components/ErrorBoundary";
+import MainLayout from "@layouts/MainLayout";
+import Home from "@screens/HomeView";
+import Almacen from "@screens/AlmacenView";
+import ECommerce from "@screens/ECommerceView";
+import Financiacion from "@screens/FinanciacionView";
+import Local from "@screens/LocalView";
+import MedioDePago from "@screens/MedioDePagoView";
+import PuntoDeVenta from "@screens/PuntoDeVentaView";
 
 function App() {
 
@@ -27,7 +27,7 @@ function App() {
             </Routes>
           </MainLayout>
         </BrowserRouter>
-      </ErrorBoundary>
+      </ErrorBoundary >
     </>
   )
 }
