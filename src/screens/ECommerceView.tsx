@@ -1,7 +1,22 @@
-export default function ECommerce() {
+import { useBusqueda } from "@hooks/state/SearchState";
+import { ContainerView } from "@layouts/ContainerView";
+import { SearchInput } from "@components/SearchControl";
+
+export default function ECommerceView() {
+    const { busqueda, handleSearchChange } = useBusqueda("");
+
+    const test = (busqueda: string): void => {
+        return console.log(`Buscar: ${busqueda}`)
+    }
+
     return (
-        <div>
-            <h1>ECommerce</h1>
-        </div>
+        <ContainerView title="Gestión de ECommerce">
+            <SearchInput
+                value={busqueda}
+                onChange={handleSearchChange}
+                onSearch={() => test(busqueda)}
+                placeholder="Ingrese un dato"
+            />
+        </ContainerView>
     );
 }

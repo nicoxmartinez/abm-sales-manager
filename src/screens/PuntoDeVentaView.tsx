@@ -1,7 +1,22 @@
-export default function PuntoDeVenta() {
+import { useBusqueda } from "@hooks/state/SearchState";
+import { ContainerView } from "@layouts/ContainerView";
+import { SearchInput } from "@components/SearchControl";
+
+export default function PuntoDeVentaView() {
+    const { busqueda, handleSearchChange } = useBusqueda("");
+
+    const test = (busqueda: string): void => {
+        return console.log(`Buscar: ${busqueda}`)
+    }
+
     return (
-        <div>
-            <h1>Punto de Venta</h1>
-        </div>
+        <ContainerView title="Gestión de Puntos de Venta">
+            <SearchInput
+                value={busqueda}
+                onChange={handleSearchChange}
+                onSearch={() => test(busqueda)}
+                placeholder="Ingrese un dato"
+            />
+        </ContainerView>
     );
 }

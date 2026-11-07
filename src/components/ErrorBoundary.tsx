@@ -7,21 +7,21 @@ type ErrorBoundaryProps = {
 
 class ErrorBoundary extends Component<ErrorBoundaryProps, { hasError: boolean }> {
   constructor(props: ErrorBoundaryProps) {
-    super(props)
-    this.state = { hasError: false }
-    this.reloadPage = this.reloadPage.bind(this)
+    super(props);
+    this.state = { hasError: false };
+    this.reloadPage = this.reloadPage.bind(this);
   }
 
   componentDidCatch(error: Error, errorInfo: React.ErrorInfo) {
-    console.log('Error:', error, errorInfo)
+    console.log('Error:', error, errorInfo);
   }
 
   static getDerivedStateFromError(_error: Error) {
-    return { hasError: true }
+    return { hasError: true };
   }
 
   reloadPage() {
-    window.location.reload()
+    window.location.reload();
   }
 
   render() {
@@ -69,8 +69,8 @@ class ErrorBoundary extends Component<ErrorBoundaryProps, { hasError: boolean }>
         </div>
       )
     }
-    return this.props.children
+    return this.props.children;
   }
 }
 
-export default ErrorBoundary
+export default ErrorBoundary;

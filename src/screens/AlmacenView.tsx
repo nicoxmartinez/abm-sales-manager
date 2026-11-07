@@ -1,7 +1,22 @@
-export default function Almacen() {
+import { useBusqueda } from "@hooks/state/SearchState";
+import { ContainerView } from "@layouts/ContainerView";
+import { SearchInput } from "@components/SearchControl";
+
+export default function AlmacenView() {
+    const { busqueda, handleSearchChange } = useBusqueda("");
+
+    const test = (busqueda: string): void => {
+        return console.log(`Buscar: ${busqueda}`)
+    }
+
     return (
-        <div>
-            <h1>Almacén</h1>
-        </div>
+        <ContainerView title="Gestión de Almacénes">
+            <SearchInput
+                value={busqueda}
+                onChange={handleSearchChange}
+                onSearch={() => test(busqueda)}
+                placeholder="Ingrese un dato"
+            />
+        </ContainerView>
     );
 }

@@ -9,7 +9,7 @@ export default defineConfig({
     alias: {
       '@': path.resolve(import.meta.dirname, './src'),
       '@components': path.resolve(import.meta.dirname, './src/components'),
-      'hooks': path.resolve(import.meta.dirname, './src/hooks'),
+      '@hooks': path.resolve(import.meta.dirname, './src/hooks'),
       '@layouts': path.resolve(import.meta.dirname, './src/layouts'),
       '@models': path.resolve(import.meta.dirname, './src/models'),
       '@services': path.resolve(import.meta.dirname, './src/services'),
